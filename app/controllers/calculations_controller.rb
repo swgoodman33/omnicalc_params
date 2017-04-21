@@ -17,4 +17,12 @@ class CalculationsController < ApplicationController
         @monthly_payment = ""
       render("calculations/flexible_payment.html.erb")
     end
+    def square_form
+      render("calculations/square_form.html.erb")
+    end
+    def square
+      @user_provided_number = params["user_provided_number"].to_f
+      @squared_number = @user_provided_number**2
+      render("calculations/square.html.erb")
+    end
 end
